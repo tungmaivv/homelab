@@ -1,2 +1,2 @@
 # homelab
-# This is my homelab setup
+This is my homelab setup
