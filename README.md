@@ -3,8 +3,12 @@
 
 This is my homelab setup
 
-## setup TrueNAS Scale
+## setup docker swarm
+3 nodes docker swarm VM on proxmox
 
+## setup TrueNAS Scale
+- setup TrueNAS Scale VM
+  - download from https://www.truenas.com/download-truenas-scale/
 - Data sets:
 
 >   - proxmox  
@@ -18,19 +22,21 @@ This is my homelab setup
 - mount nfs shares to docker nodes and dremio nodes
     - all nodes  
   
-    >suso apt update  
+    >sudo apt update  
     >sudo apt install nfs-common  
-    >showmount -e 192.168.1.100
+    >showmount -e 192.168.1.100  
 
     - Docker nodes  
   
-    >suso mkdir /var/docker-data  
+    >sudo mkdir /var/docker-data  
     >sudo apt install nfs-common  
-    
-    - Dremio nodes
+    >sudo mount -t nfs 192.168.1.100:/mnt/promox/data/docker-data /var/docker-data
 
-    >suso mkdir /var/docker-data 
-    >sudo apt install nfs-common 
+    - Dremio nodes  
+
+    >suso mkdir /var/datalake-data   
+    >sudo yum install nfs-utils  
+    >sudo mount -t nfs 192.168.1.100:/mnt/promox/data/datalake-data /var/datalake-data
   
 
 
