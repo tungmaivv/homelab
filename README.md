@@ -8,4 +8,5 @@ This is my homelab setup
             |---backup (SMB)
             |---vm-disks (SMB)
             |---docker-data (NFS)
-            |---datalake-dat (NFS)ßß\
+            |---datalake-dat (NFS)
+
